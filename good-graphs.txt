@@ -1,0 +1,13 @@
+What are the characteristics of a good data visualization/graph?  
+Purpose - Meaningful data
+Clean look, readable, not too busy-looking. 
+Content should not cram too much data into it.
+(ASIDE: Rule of 6 - gestalt
+The idea that the human brain can't handle too many visual items that look the same. Think of ways to group items.)
+Visually appealing - color, high colour contrast and large enough font-size for accessibility reasons, clean fonts.
+Choose a type that conveys message accurately and in a way that's understandable.
+
+Layout specifics - Titles that are understandable to the average person, that give context, perhaps add a caption if more info will be needed for the user to understand.
+Axes if necessary (line graph, bar graph), Labelled if needed
+Legend if needed.
+Link to the source of the data.

@@ -1,0 +1,85 @@
+<!-- Use the exclamation mark + TAB to get the basic html structure. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Visualization</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/c3.css">
+    <style>
+        text{
+            font-size: 1.2em;
+            font-family: 'Roboto', sans-serif;
+        }
+        .jumbotron{
+            background-color:darkviolet;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <header class="jumbotron">
+        <h1>Creating A Bar Chart with <a href="https://c3js.org/">C3.js</a></h1>
+        <p class="lead">C3.js depends on <a href="https://d3js.org/">D3.js</a>.</p>
+    </header>
+    <div class="container">
+        <h2> Ontario- Populations by Cities</h2>
+        <div id="chart"></div>
+        <br>
+        <p> Source: <a href="https://en.wikipedia.org/wiki/List_of_population_centres_in_Ontario">https://en.wikipedia.org/wiki/List_of_population_centres_in_Ontario</a></p>
+    </div>
+<script src="js/d3.min.js"></script>
+<script src="js/c3.min.js"></script>
+<script>
+var chart = c3.generate({
+    bindto: "#chart",  //identifying each chart different than any other subjects on page
+    data: {
+        columns: [
+            ['Populations', 694 , 470 , 309, 383, 5429,], //These are the populative numbers per city by hundred thousands
+            
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            categories: ['Hamilton', 'Kitchener', 'Oshawa', 'London', 'Toronto', 'Windsor'], // these are the cities I picked
+            label: {
+                text: 'Cities of Ontario', //this is the bottom label for graph, positioned on bottom and centered
+                position: 'outer-center'
+                
+            }, // end of label:
+            padding: {
+                left: 0,
+                right: 0,
+                top: "100px"
+            }, // end of padding:
+        }, // end of x:
+        y:{
+            label: {
+                text: 'Population (Hundred Thousands)',
+                position: 'outer-middle'
+                
+            } // end of label:
+        } // end of y:
+    }, // end of axis:
+    bar: {
+        width: {
+            ratio: 0.5 // this will make the bar width 50% of length between ticks
+        }
+    },
+    legend:{
+        // Adding legend properties here
+        position : "right",
+        show: true // default is false on a bar graph, probably on pie chart, so this is not required in those cases
+    },
+    color:{
+        pattern: [ "violet"]
+    }
+});
+</script>
+</body>
+</html>
